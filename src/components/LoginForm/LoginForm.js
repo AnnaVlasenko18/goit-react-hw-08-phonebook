@@ -12,44 +12,42 @@
 // } from '@chakra-ui/react';
 // import { useFormik } from 'formik';
 // import { useDispatch, useSelector } from 'react-redux';
-// import { register } from '../../redux/auth/authOperations';
+// import { logIn } from '../../redux/auth/authOperations';
+// import { selectError } from '../../redux/auth/authSelector';
 // import { useEffect } from 'react';
 // import { resetError } from '../../redux/auth/authSlice';
-// import { selectError } from '../../redux/contacts/selectors';
 // import toast from 'react-hot-toast';
 
 // const schema = Yup.object().shape({
-//   name: Yup.string().min(3, 'Too short').required('Required'),
 //   email: Yup.string().email().required('Required'),
 //   password: Yup.string().min(7, 'Too short').required('Required'),
 // });
 
-// export const RegisterForm = () => {
+// export const LoginForm = () => {
 //   const dispatch = useDispatch();
 //   const isError = useSelector(selectError);
 
 //   const formik = useFormik({
 //     initialValues: {
-//       name: '',
 //       email: '',
 //       password: '',
 //     },
 //     validationSchema: schema,
 //     onSubmit: values => {
-//       dispatch(register(values));
+//       dispatch(logIn(values));
 //     },
 //   });
 
 //   useEffect(() => {
 //     if (isError) {
-//       toast.error('Your email is invalid or already registered');
+//       toast.error('Your email or password is incorrect');
 //       dispatch(resetError());
 //     }
 //   }, [isError, dispatch]);
 
 //   return (
-//     <Flex bg="gray.100" align="center" justify="center" marginTop="10%">
-//       <Box bg="white" p={8} rounded="md">
+//     <Flex align="center" justify="center" marginTop="10%">
+//       <Box bg="white" p={6} rounded="md">
 //         <form onSubmit={formik.handleSubmit}>
 //           <VStack spacing={4} align="flex-start">
 //             <Text
@@ -58,21 +56,8 @@
 //               marginRight="auto"
 //               marginLeft="auto"
 //             >
-//               Create Account
+//               Login
 //             </Text>
-//             <FormControl isInvalid={formik.touched.name && formik.errors.name}>
-//               <FormLabel htmlFor="name">Your Name</FormLabel>
-//               <Input
-//                 name="name"
-//                 id="name"
-//                 type="name"
-//                 variant="outline"
-//                 onChange={formik.handleChange}
-//                 value={formik.values.name}
-//                 onBlur={formik.handleBlur}
-//               />
-//               <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
-//             </FormControl>
 //             <FormControl
 //               isInvalid={formik.touched.email && formik.errors.email}
 //             >
@@ -109,7 +94,7 @@
 //               width="full"
 //               marginTop="4"
 //             >
-//               Sign Up
+//               Sign In
 //             </Button>
 //           </VStack>
 //         </form>
