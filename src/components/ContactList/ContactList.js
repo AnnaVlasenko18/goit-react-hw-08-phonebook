@@ -1,6 +1,10 @@
 import { useSelector } from 'react-redux';
 import { ContactListItem } from '../ContactListItem/ContactListItem';
-import { ContactsList } from './ContactList.styled';
+import {
+  ContactsList,
+  ContactsTitle,
+  StyleContactListConteiner,
+} from './ContactList.styled';
 import {
   selectError,
   selectIsLoading,
@@ -15,12 +19,15 @@ export const ContactList = () => {
   const error = useSelector(selectError);
 
   return (
-    <ContactsList>
-      {isLoading && <Loader />}
-      {error && <ErrorMsg />}
-      {contacts.map(contact => {
-        return <ContactListItem key={contact.id} contact={contact} />;
-      })}
-    </ContactsList>
+    <StyleContactListConteiner>
+      <ContactsList>
+        <ContactsTitle>Contacts</ContactsTitle>
+        {isLoading && <Loader />}
+        {error && <ErrorMsg />}
+        {contacts.map(contact => {
+          return <ContactListItem key={contact.id} contact={contact} />;
+        })}
+      </ContactsList>
+    </StyleContactListConteiner>
   );
 };

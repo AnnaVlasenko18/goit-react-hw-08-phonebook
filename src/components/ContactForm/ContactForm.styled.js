@@ -2,8 +2,11 @@ import styled from 'styled-components';
 import { ErrorMessage, Field, Form } from 'formik';
 
 export const Wrapper = styled.div`
+  min-height: calc(60vh);
   display: flex;
   justify-content: center;
+  background: ${props => props.theme.colors.background};
+  color: white;
 `;
 
 export const FormContact = styled(Form)`
@@ -12,7 +15,6 @@ export const FormContact = styled(Form)`
   justify-content: center;
   align-items: center;
   gap: ${p => p.theme.spacing(3)};
-  margin-bottom: ${p => p.theme.spacing(20)};
 `;
 
 export const FormLabel = styled.label`
@@ -20,10 +22,11 @@ export const FormLabel = styled.label`
 `;
 
 export const ErrMsgStyled = styled(ErrorMessage)`
-  color: ${props => props.theme.colors.background};
-  background-color: ${props => props.theme.colors.color};
-  opacity: 0.8;
+  color: ${props => props.theme.colors.errorText};
+  background-color: ${props => props.theme.colors.colorText};
+  opacity: 0.9;
   font-size: ${props => props.theme.fontSize.fs20};
+  font-weight: 500;
   padding: ${p => p.theme.spacing(1)};
   width: auto;
   border-radius: ${props => props.theme.radii.md};
@@ -32,14 +35,13 @@ export const ErrMsgStyled = styled(ErrorMessage)`
 export const InputForm = styled(Field)`
   width: 300px;
   padding: ${p => p.theme.spacing(2)};
-  opacity: 0.8;
   border-radius: ${props => props.theme.radii.sm};
-  border: 2px solid ${props => props.theme.colors.backgroundBorder};
-  color: ${props => props.theme.colors.backgroundBorder};
+  border: 2px solid ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.background};
 
   &::placeholder {
-    color: ${props => props.theme.colors.backgroundInput};
-    opacity: 0.8;
+    color: ${props => props.theme.colors.background};
+    opacity: 0.4;
   }
 `;
 
@@ -48,12 +50,15 @@ export const AddContact = styled.button`
   margin-top: ${p => p.theme.spacing(4)};
   font: inherit;
   border-radius: ${props => props.theme.radii.sm};
-  border: 2px solid ${props => props.theme.colors.backgroundBorder};
-  color: ${props => props.theme.colors.backgroundBorder};
+  border: 2px solid ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.backgroundHeader};
+  color: ${props => props.theme.colors.background};
+  font-weight: 600;
 
   &:hover {
     border-radius: ${props => props.theme.radii.sm};
-    background: ${props => props.theme.colors.backgroundBorder};
+    background: ${props => props.theme.colors.backgroundHeader};
     color: ${props => props.theme.colors.background};
+    opacity: 0.9;
   }
 `;

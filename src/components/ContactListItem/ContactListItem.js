@@ -4,6 +4,7 @@ import {
   ContactItemText,
   ContactDelete,
   FormText,
+  ContactDeleteIcon,
 } from './ContactListItem.styled';
 import { deleteContact } from '../../redux/contacts/operations';
 
@@ -18,7 +19,7 @@ export const ContactListItem = ({ contact: { name, number, id } }) => {
         <FormText>{number}</FormText>
       </ContactItemText>
       <ContactDelete type="button" onClick={handelDelete}>
-        Delete
+        <ContactDeleteIcon />
       </ContactDelete>
     </ContactItem>
   );

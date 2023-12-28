@@ -65,7 +65,7 @@ export const ContactForm = () => {
       >
         <FormContact>
           <FormLabel htmlFor="name">Name</FormLabel>
-          <InputForm name="name" type="text" placeholder="Enter name" />
+          <InputForm name="name" type="text" placeholder="Name" />
           <ErrMsgStyled name="name" component="div" />
 
           <FormLabel>Number</FormLabel>

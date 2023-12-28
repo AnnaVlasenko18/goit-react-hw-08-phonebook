@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import { MdDelete } from 'react-icons/md';
 
 export const ContactItem = styled.li`
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
 `;
 
 export const ContactItemText = styled.div`
@@ -18,17 +18,13 @@ export const FormText = styled.label`
 `;
 
 export const ContactDelete = styled.button`
-  height: 30px;
-  padding: ${p => p.theme.spacing(1)};
-  font: inherit;
-  border-radius: ${props => props.theme.radii.sm};
-  border: 2px solid ${props => props.theme.colors.backgroundBorder};
-  color: ${props => props.theme.colors.backgroundBorder};
-  display: flex;
-
   &:hover {
     border-radius: ${props => props.theme.radii.sm};
-    background: ${props => props.theme.colors.backgroundBorder};
+    background: ${props => props.theme.colors.colorText};
     color: ${props => props.theme.colors.background};
   }
+`;
+export const ContactDeleteIcon = styled(MdDelete)`
+  width: 28px;
+  height: 28px;
 `;

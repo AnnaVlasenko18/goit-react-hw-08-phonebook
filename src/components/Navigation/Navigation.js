@@ -1,14 +1,23 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import {
+  StyledHeaderNav,
+  StyledHeaderLink,
+  StyledHeaderConteiner,
+  StyledHeaderIcon,
+} from './NavigationStyled';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
+    <StyledHeaderConteiner>
+      <StyledHeaderNav to="/">PHONEBOOK</StyledHeaderNav>
 
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-    </nav>
+      {isLoggedIn && (
+        <StyledHeaderLink to="/contacts">
+          <StyledHeaderIcon width="49px" height="49px" />
+        </StyledHeaderLink>
+      )}
+    </StyledHeaderConteiner>
   );
 };

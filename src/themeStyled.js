@@ -2,14 +2,9 @@ export const theme = {
   colors: {
     backgroundHeader: 'white',
     background: 'black',
-
-    backgroundInput: '#e8e3e5',
-    backgroundBtn: '#8b8589',
-    backgroundBorder: '#5d555b',
-    color: '#5d555b',
-    colorBtn: '#f2f3f4',
-    accentBtn: '#173620',
-    accentColorBtn: 'white',
+    colorTextHeader: 'black',
+    colorText: 'white',
+    errorText: 'red',
   },
 
   fontSize: {

@@ -7,7 +7,6 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
-  Text,
   VStack,
 } from '@chakra-ui/react';
 import { useFormik } from 'formik';
@@ -17,6 +16,7 @@ import { selectIsError } from '../../redux/auth/authSelector';
 import { useEffect } from 'react';
 import { resetError } from '../../redux/auth/authSlice';
 import toast from 'react-hot-toast';
+import { StyledLoginPage } from '../LoginForm/LoginFormStyled';
 
 const schema = Yup.object().shape({
   email: Yup.string().email().required('Required'),
@@ -46,59 +46,56 @@ export const LoginForm = () => {
   }, [isError, dispatch]);
 
   return (
-    <Flex align="center" justify="center" marginTop="10%">
-      <Box bg="white" p={6} rounded="md">
-        <form onSubmit={formik.handleSubmit}>
-          <VStack spacing={4} align="flex-start">
-            <Text
-              fontSize="2xl"
-              fontWeight="bold"
-              marginRight="auto"
-              marginLeft="auto"
-            >
-              Login
-            </Text>
-            <FormControl
-              isInvalid={formik.touched.email && formik.errors.email}
-            >
-              <FormLabel htmlFor="email">Email Address</FormLabel>
-              <Input
-                name="email"
-                id="email"
-                type="email"
-                variant="outline"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-                onBlur={formik.handleBlur}
-              />
-              <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-            </FormControl>
-            <FormControl
-              isInvalid={formik.touched.password && formik.errors.password}
-            >
-              <FormLabel htmlFor="password">Password</FormLabel>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                variant="outline"
-                onChange={formik.handleChange}
-                value={formik.values.password}
-                onBlur={formik.handleBlur}
-              />
-              <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
-            </FormControl>
-            <Button
-              type="submit"
-              colorScheme="purple"
-              width="full"
-              marginTop="4"
-            >
-              Sign In
-            </Button>
-          </VStack>
-        </form>
-      </Box>
-    </Flex>
+    <StyledLoginPage>
+      <Flex align="center" justify="center" marginTop="25%">
+        <Box bg="black" p={6} rounded="md">
+          <form onSubmit={formik.handleSubmit}>
+            <VStack spacing={4} align="flex-start">
+              <FormControl
+                isInvalid={formik.touched.email && formik.errors.email}
+              >
+                <FormLabel htmlFor="email">Email Address</FormLabel>
+                <Input
+                  name="email"
+                  id="email"
+                  type="email"
+                  variant="outline"
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                  onBlur={formik.handleBlur}
+                />
+                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+              </FormControl>
+              <FormControl
+                isInvalid={formik.touched.password && formik.errors.password}
+              >
+                <FormLabel htmlFor="password">Password</FormLabel>
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  variant="outline"
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
+                  onBlur={formik.handleBlur}
+                />
+                <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+              </FormControl>
+              <Button
+                type="submit"
+                width="full"
+                marginTop="4"
+                color="black"
+                bg="white"
+                fontSize="18px"
+                fontWeight="bold"
+              >
+                LOG IN
+              </Button>
+            </VStack>
+          </form>
+        </Box>
+      </Flex>
+    </StyledLoginPage>
   );
 };
