@@ -1,7 +1,9 @@
 export const theme = {
   colors: {
+    backgroundHeader: 'white',
+    background: 'black',
+
     backgroundInput: '#e8e3e5',
-    background: '#bfb9bd',
     backgroundBtn: '#8b8589',
     backgroundBorder: '#5d555b',
     color: '#5d555b',
@@ -15,16 +17,14 @@ export const theme = {
     fs20: '20px',
     fs24: '24px',
     fs28: '28px',
+    fs48: '48px',
   },
 
   radii: {
     sm: '4px',
     md: '12px',
     lg: '16px',
-  },
-
-  font: {
-    fontSize: '18px',
+    xl: '50%',
   },
 
   spacing: value => `${value * 4}px`,

@@ -15,10 +15,8 @@ export const authSlice = createSlice({
   initialState: {
     user: { name: null, email: null },
     isLoggedIn: false,
-    token: '',
+    token: null,
     isRefreshing: false,
-    isError: false,
-    isLoading: false,
   },
 
   reducers: {

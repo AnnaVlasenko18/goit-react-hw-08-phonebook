@@ -1,7 +1,6 @@
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { ContactList } from '../components/ContactList/ContactList';
-import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsLoading } from '../redux/contacts/selectors';
@@ -16,9 +15,7 @@ export default function MyContactsPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Your contacts</title>
-      </Helmet>
+      <title>Your contacts</title>
       <ContactForm />
       <Filter />
       <div>{isLoading && 'Request in progress...'}</div>

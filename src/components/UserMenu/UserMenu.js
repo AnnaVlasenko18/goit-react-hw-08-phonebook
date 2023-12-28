@@ -6,11 +6,13 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const { userName } = useAuth();
 
+  const handleLogOut = () => dispatch(logOut());
+
   return (
     <>
-      <p> Welcome, {userName}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
-        Log Out
+      <p> Welcome, {userName.name}</p>
+      <button type="button" onClick={handleLogOut}>
+        Logout
       </button>
     </>
   );

@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <StyleContainer>
       <StyleTitle>Wellcome to Phonebook!</StyleTitle>
-      <StyleIcon icon={faSmile} size="2x" />
+      <StyleIcon icon={faSmile} size="3x" />
     </StyleContainer>
   );
 }

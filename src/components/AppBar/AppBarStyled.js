@@ -1,27 +1,15 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { TaskList } from 'components/TaskList/TaskList';
-import { TaskEditor } from 'components/TaskEditor/TaskEditor';
-import { fetchTasks } from 'redux/tasks/operations';
-import { selectLoading } from 'redux/tasks/selectors';
+import styled from 'styled-components';
 
-export default function Tasks() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectLoading);
-
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
-
-  return (
-    <>
-      <Helmet>
-        <title>Your tasks</title>
-      </Helmet>
-      <TaskEditor />
-      <div>{isLoading && 'Request in progress...'}</div>
-      <TaskList />
-    </>
-  );
-}
+export const StyledHeader = styled('header')`
+  width: 100%;
+  background: ${p => p.theme.colors.backgroundHeader};
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+`;
